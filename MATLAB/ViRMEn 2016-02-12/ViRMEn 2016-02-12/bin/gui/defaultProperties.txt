@@ -1,0 +1,23 @@
+windowRendering3D	true
+windowTransformation	1
+windowPrimaryMonitor	true
+windowMonitor	1
+windowFullScreen	true
+windowLeft	0
+windowBottom	0
+windowWidth	300
+windowHeight	300
+windowAntialiasing	0
+worldXLim	[-100 100]
+worldYLim	[-100 100]
+worldBackgroundColor	[0 0 0]
+worldTransparency	0
+showWireframe	0
+startLocation	[0 0 0 0]
+tiling	[5 5]
+edgeRadius	NaN
+triangulationRefining	[1 1]
+triangulationGrid	[1 1]
+showTriangulation	1
+triangulationColor	[1 0 0]
+textureTilable	[1 1]

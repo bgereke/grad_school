@@ -1,0 +1,13 @@
+% [eeg5,eegTS5] = loadEeg8('CSC5.ncs');
+% bpt5 = fftbandpass(eeg5,2000,5,6,11,12);
+% bps5 = fftbandpass(eeg5,2000,23,25,55,57);
+% bpf5 = fftbandpass(eeg5,2000,63,65,95,97);
+row = 105;
+subplot(3,1,1);hmap(scores{row,12},scores{row,15}-min(scores{row,15}),scores{row,14});
+subplot(3,1,1); hold on; plot(scores{row,15}-min(scores{row,15}),scores{row,14}(round(scores{row,13}),1),'r','LineWidth',3);
+window = scores{row,2};
+windowm = window - min(scores{row,15});
+subplot(3,1,2);plot(eegTS5(eegTS5>window(1,1) & eegTS5<window(1,2))-min(window),eeg5(eegTS5>window(1,1) & eegTS5<window(1,2)));
+subplot(3,1,2); hold on; plot(eegTS5(eegTS5>window(1,1) & eegTS5<window(1,2))-min(window),bpt5(eegTS5>window(1,1) & eegTS5<window(1,2)),'k');
+subplot(3,1,3);plot(eegTS5(eegTS5>window(1,1) & eegTS5<window(1,2))-min(window),bps5(eegTS5>window(1,1) & eegTS5<window(1,2)));
+subplot(3,1,3); hold on; plot(eegTS5(eegTS5>window(1,1) & eegTS5<window(1,2))-min(window),bpf5(eegTS5>window(1,1) & eegTS5<window(1,2)),'r');

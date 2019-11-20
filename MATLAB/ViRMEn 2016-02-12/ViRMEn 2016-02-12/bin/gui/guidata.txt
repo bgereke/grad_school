@@ -1,0 +1,63 @@
+ToolTip	Menu	MenuLabel	Figure	Type	Callback	CallbackArgument	Separator	Icon
+Run	Experiment	Run	n/a	button	run	n/a	off	run
+Windows manager	Experiment	Windows manager…	n/a	button	changeExperimentProperties	n/a	off	windows
+Open experiment	Experiment	Open…	n/a	button	openExperiment	n/a	on	open
+Save experiment	Experiment	Save…	n/a	button	saveExperiment	n/a	off	save
+New experiment	Experiment	New	n/a	button	newExperiment	n/a	off	new
+Edit code	Experiment	Edit code	n/a	dropdown	listEdit	n/a	on	matlab
+Run macro	Experiment	Run macro	n/a	dropdown	listMacros	n/a	off	macros
+Macro settings	Experiment	Macro settings…	n/a	dropdown	listMacroSettings	n/a	off	settings_macros
+Export	Experiment	Export	n/a	dropdown	listExports	n/a	on	export
+Undo	GUI	Undo	n/a	button	changeHistory	undo	on	undo
+Redo	GUI	Redo	n/a	button	changeHistory	redo	off	redo
+Experiment layout	GUI	Experiment layout	n/a	button	builtinLayout	experiment	on	experiment
+World layout	GUI	World layout	n/a	button	builtinLayout	world	off	world
+Texture layout	GUI	Texture layout	n/a	button	builtinLayout	texture	off	texture
+3D world view	GUI	3D world view	n/a	button	builtinLayout	3d	off	threeD
+Layout	GUI	Layout	n/a	dropdown	listLayouts	n/a	off	layout
+Variables table	Variables	Table…	n/a	button	listVariables	n/a	on	variable
+Add variable	Variables	Add…	variablesTable	button	addVariable	n/a	on	add_variable
+Delete variable(s)	Variables	Delete	variablesTable	button	deleteVariables	n/a	off	delete_variable
+Rename variable(s)	Variables	Rename…	variablesTable	button	renameVariables	n/a	off	rename_variable
+Sort variables	Variables	Sort…	variablesTable	button	sortVariables	n/a	off	sort_variable
+Add world	World	Add	worldsMenu	button	addWorld	n/a	on	add_world
+Import world	World	Import…	worldsMenu	button	importWorld	n/a	off	import_world
+Delete world	World	Delete	worldsMenu	button	deleteWorld	n/a	off	delete_world
+Rename world	World	Rename…	worldsMenu	button	renameWorld	n/a	off	rename_world
+Sort worlds	World	Sort…	worldsMenu	button	sortWorlds	n/a	off	sort_world
+Isometric view	World	Isometric view	worldDrawing	button	changeView	isometric	on	viewIsometric
+Top view	World	Top view	worldDrawing	button	changeView	top	off	viewTop
+Front view	World	Front view	worldDrawing	button	changeView	front	off	viewFront
+Side view	World	Side view	worldDrawing	button	changeView	side	off	viewSide
+Rotate counterclockwise	World	Rotate right	worldDrawing	button	rotateView	right	on	rotateRight
+Rotate clockwise	World	Rotate left	worldDrawing	button	rotateView	left	off	rotateLeft
+Rotate down	World	Rotate down	worldDrawing	button	rotateView	down	off	rotateDown
+Rotate up	World	Rotate up	worldDrawing	button	rotateView	up	off	rotateUp
+Change world background	World	Background…	"worldSketch,worldDrawing"	button	changeWorldBackground	n/a	on	backgroundColor
+World transparency on/off	World	Transparency	"worldSketch,worldDrawing"	toggle	changeWorldTransparency	n/a	off	transparency
+Wireframe on/off	World	Wireframe	"worldSketch,worldDrawing"	toggle	switchWireframe	n/a	off	wireframe
+Add object	Object	Add	worldSketch	dropdown	listObjects	n/a	on	add_object
+Import object	Object	Import…	worldSketch	button	importObject	n/a	off	import_object
+Delete object	Object	Delete	worldSketch	button	deleteObject	n/a	off	delete_object
+Rename object	Object	Rename…	worldSketch	button	renameObject	n/a	off	rename_object
+Sort objects	Object	Sort…	worldSketch	button	sortObjects	n/a	off	sort_object
+Add object location	Object	Add location	objectProperties	button	addObjectLocation	n/a	on	add_location
+Delete object location(s)	Object	Delete location(s)	objectProperties	button	deleteObjectLocations	n/a	off	delete_location
+Symbolic object location(s)	Object	Symbolic location(s)…	objectProperties	button	changeSymbolicObjectLocations	n/a	off	variable_location
+Add shape location	Texture	Add location	shapeProperties	button	addShapeLocation	n/a	on	add_location
+Delete shape location(s)	Texture	Delete location(s)	shapeProperties	button	deleteShapeLocations	n/a	off	delete_location
+Symbolic shape location(s)	Texture	Symbolic location(s)…	shapeProperties	button	changeSymbolicShapeLocations	n/a	off	variable_location
+Import texture	Texture	Import…	textureSketch	button	importTexture	n/a	on	import_texture
+Load image	Texture	Load image…	textureSketch	button	loadImage	n/a	off	image
+Add shape	Texture	Add shape	textureSketch	dropdown	listShapes	n/a	on	add_shape
+Delete shape	Texture	Delete shape	textureSketch	button	deleteShape	n/a	off	delete_shape
+Rename shape	Texture	Rename shape…	textureSketch	button	renameShape	n/a	off	rename_shape
+Sort shapes	Texture	Sort shapes…	textureSketch	button	sortShapes	n/a	off	sort_shape
+Add color	Texture	Add color	textureSketch	button	addShape	shapeColor	on	add_color
+Set color	Texture	Set color…	textureSketch	button	selectShape	n/a	off	import_color
+Refine triangulation	Texture	Refine triangulation…	"textureSketch,textureDrawing"	button	refineTexture	n/a	on	refineTexture
+Show/hide triangulation	Texture	Show triangulation	"textureSketch,textureDrawing"	toggle	changeTriangulationVisibility	n/a	off	showTriangulation
+Triangulation mesh color	Texture	Mesh color…	"textureSketch,textureDrawing"	button	changeTriangulationColor	n/a	off	triangulationColor
+Compute texture	Texture	Compute	"shapeProperties,textureSketch,textureDrawing"	button	computeTexture	n/a	on	computeTexture
+ViRMEn manual	Help	ViRMEn manual…	n/a	button	manual	n/a	on	help
+About ViRMEn	Help	About ViRMEn…	n/a	button	about	n/a	off	about

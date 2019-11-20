@@ -1,0 +1,71 @@
+Interactive Resolution Enhancement 
+Mathematically simple, quickly-computable resolution
+enhancement for time-series signals consisting of partially 
+overlapping peaks.  It is based on subtracting the scaled, 
+smoothed 2nd derivative and adding the scaled, smoothed 
+4th derivative to the original signal.  The algorithm can be
+customized for signals of different types by adjusting the 
+scaling factors for the derivatives and the width of the 
+smoothing function.  The routines here have sliders that
+allow you to adjust the resolution enhancement parameters
+continuously while observing the effect on your signal 
+dynamically.   Tom O'Haver, toh@umd.edu
+(Thanks to Matthew Jones for the slider function.)
+
+enhance
+function Enhancedsignal=enhance(signal,factor1,factor2,SmoothWidth)
+Basic function for resolution enhancement by the even-derivative 
+method. The arguments factor1 and factor2 are the weighting factors 
+for the 2nd and 4th derivatives.  SmoothWidth is the width of the
+smoothing function applied to the derivatives. 
+
+InteractiveResEnhance
+ Interactive optimization of derivative resolution enhancement for
+ your own data.  To use this, place the data to be enhanced in
+ the global vector "signal", then execute this file.  It plots the 
+ data and displays sliders for separate real-time control of 2nd 
+ and 4th derivative weighting factors (factor and factor2) and 
+ smooth width. (Larger values of factor1 and factor2 will reduce
+ the peak widths but will cause artifacts in the baseline near 
+ the peak.  Adjust the factors for the best trade-off).   Use 
+ the minimum smooth width needed to reduce excess noise. 
+ The  resolution-enhanced signal is placed in the global vector  
+ "Enhancedsignal".  (If the range of the sliders is inappropriate 
+ for your signal, you can adjust the slider ranges in lines 27-29).
+ Optimum values for the two factors factor1 and factor2 depend
+ on the width and the shape of the peaks in the signal, and 
+ also on the desired trade-off between resolution enhancement
+ (peak width reduction) and baseline artifacts that are a
+ by-product of the method.  As a starting point, a reasonable
+ value for factor1 is (PeakWidth.^2)./25 and  for factor 2 
+ is (PeakWidth.^4)./833 for peaks of Gaussian shape 
+ (or (PeakWidth.^2)./6 and (PeakWidth.^4)./700 for 
+ Lorentzian peaks), where PeakWidth is the full-width at
+ half maximum of the peaks expressed in number of data 
+ points.
+
+DemoResEnhance
+ Self-contained demo of resolution enhancement for a 
+ simulated signal of overlapping peaks. Displays sliders for 
+ separate real-time control of 2nd and 4th derivative 
+ weighting factors (factor and factor2) and  smooth width. 
+ Larger values of factor1 and factor2 will reduce the 
+ peak width but will also cause artifacts in the baseline near 
+ the peak.  Adjust these factors for the the best compromise. 
+ Use the minimum smooth width needed to reduce excess noise
+ (too much smoothing will reduce the resolution enhancement). 
+
+DemoResEnhance2G
+Similar to DemoResEnhance, but for a single Gaussian peak. 
+This allows you to experiment with a single isolated
+peak.  You can change the width of the peak in line 26. 
+The peak width of the resolution-enhanced peak is 
+computed and displayed. 
+
+DemoResEnhance2L
+Same as DemoResEnhance2G, for Lorentzian peak.
+
+The other m-files in this directory are all called by the routines 
+above.
+
+Tom O'Haver, toh@umd.edu

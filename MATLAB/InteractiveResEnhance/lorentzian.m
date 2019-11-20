@@ -1,0 +1,1 @@
+function g = lorentzian(x,pos,wid)% lorentzian(x,pos,wid) Lorentzian function, pos=position; wid=half-width% where x may be scalar, vector, or matrix% pos=position; wid=half-width (both scalar)% T. C. O'Haver, 1988[m,n] = size(x);if m == 1	m = n;endg=ones(size(x))./(1+((x-pos)./(0.5.*wid)).^2);

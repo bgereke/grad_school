@@ -1,0 +1,19 @@
+Fixed:
+% mapX1d.m: now it correctly takes care of interpolation case (and expterpolation).
+
+% getScores1: xi_var{i} is garanteed to be symmetric
+
+% cv_common should always return a scaler: the larger bandwidth is chosen.
+
+% PCA.m 606: the input of linspace is garanteed to be double
+
+TODO: 
+% BUG in PACE: control cannot be set to 'look'
+        p1=setOptions('selection_k',K,'regular', regular,'kernel', ...
+        kernel, 'numBins',0,'newdata',out1,'error', error_type,'screePlot',0, ...
+        'rho', rho, 'ngrid', ngrid, 'verbose', verbose);
+		
+% bandwidth selcector cannot handle integer valued time point input
+
+% When method='CE', error=0, getScores1 does not spit out a warning or error
+% even when Sigma_Yi is near singular

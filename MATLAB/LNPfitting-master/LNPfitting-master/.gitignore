@@ -1,0 +1,13 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+*~
+
+
+# folder with simulated data
+simdatadir/*
+
+# folder with local data
+local/*

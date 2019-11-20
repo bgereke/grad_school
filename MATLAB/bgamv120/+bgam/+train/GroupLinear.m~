@@ -1,0 +1,97 @@
+classdef GroupLinear < bgam.Trainer
+    %bgam.train.GroupLinear - Group Linear trainer
+    %
+    %GroupLinear learners are like regular linear learners, except that
+    %during learning groups of covariates are selected instead of one at a 
+    %time. This is useful when covariates are related in a way that 
+    %selecting one without related covariates doesn't make sense. 
+    %
+    %What constitutes a group is determined by G, which is an mxn 
+    %logical matrix, where m is the number of groups and n is the number of
+    %covariates (the width of X). G(i,j) = 1 indicates that the j'th
+    %covariate belongs to group i. 
+    %
+    %See also bgam.Trainer
+    %
+    %bgam.train.Linear Methods:
+    %
+    %    learnersToPath - Translates list of learners to a path of w's
+    %    learnersToW    - Translates list of learners to a single w
+    properties(Access=public)
+        %Defines what is in a group
+        G;
+    end
+    
+    properties(Hidden)
+        %Numerically stabilizes std computation
+        fudgeFactor = 1e-12;
+        Gp;
+    end
+    
+    properties(Access=private)
+        %Otherwise doc doesn't parse the class correctly
+        nothingness;
+    end
+    
+    methods(Hidden)
+        %Computes std of columns
+        function initData(this,X)
+            %Computes a rotated version of X where variables within groups
+            %have identity covariance matrix
+            Z = zeros(size(X));
+            nGs = 0;
+            this.Gp = zeros(size(this.G'));
+            for ii = 1:size(this.G,1)
+                subX = X(:,this.G(ii,:));
+                subX = bsxfun(@minus,subX,mean(subX));
+                [R,Lambda] = eig(subX'*subX);
+                nG = nnz(this.G(ii,:));
+                Z(:,(1:nG)+nGs) = subX*R*diag(1./(sqrt(diag(Lambda))+this.fudgeFactor));
+                this.Gp((1:nG)+nGs,ii) = 1;
+                nGs = nG + nGs;
+            end
+            
+            this.cache = Z;
+        end
+        
+        %Finds column with highest correlation to current residual
+        function [lrn] = findBestLearner(this,r,X)
+            scaledcc = ((this.cache'*r).^2)'*this.Gp;
+            [~,bestgrp] = max(abs(scaledcc));
+            
+            ws = [X(:,this.G(bestgrp,:)),ones(size(r))]\r;
+            
+            lrn.gain = 1;
+            lrn.indices = find(this.G(bestgrp,:));
+            lrn.ws = ws(1:end-1);
+        end
+    end
+    
+    methods(Access=public)
+        %Trivial
+        function [y] = evaluate(~,lrn,X)
+            y = lrn.gain*(X(:,lrn.indices)*lrn.ws);
+        end
+        
+        %this.learnersToPath(~,learners,numws)
+        function [wpath] = learnersToPath(~,learners,nw)
+            indices = cell2mat({learners(:).indices});
+            gains   = cell2
+            idx = sub2ind([nw,length(learners)],cell2mat({learners(:).index}),...
+                    1:length(learners));
+            wpath = zeros(nw,length(learners));    
+            wpath(idx) = cell2mat({learners(:).gain});
+            wpath = cumsum(wpath,2);
+        end
+        
+        %this.learnersToW(learners,numws)
+        function [wpath] = learnersToW(~,learners,nw)
+            idx = sub2ind([nw,length(learners)],cell2mat({learners(:).index}),...
+                    1:length(learners));
+            wpath = zeros(nw,length(learners));    
+            wpath(idx) = cell2mat({learners(:).gain});
+            wpath = sum(wpath,2);
+        end
+    end
+
+end

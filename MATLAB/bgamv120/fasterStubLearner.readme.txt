@@ -1,0 +1,9 @@
+If you use the StubLearner habitually, you may want to compile getBestSpotStubLearner.c, like so:
+
+mex getBestSpotStubLearner.c
+
+To get an appreciable speed boost, you must use .fitFraction = 1, otherwise the increase in speed will be eclipsed by the time it takes to sort the design matrix which changes on every iteration.
+
+Unfortunately I cannot furnish precompiled .mex files and have not tried compiling with another compiler than gcc on Linux but if you get it to work on your platform send me an email with a link to your mex file and I will create a page where precompiled binaries will be available for common platforms.
+
+patrick dot mineault at gmail dot com
