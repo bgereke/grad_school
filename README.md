@@ -1,2 +1,2 @@
 # grad_school
-PhD scripts
+An archived collections of scripts I developed during my PhD
