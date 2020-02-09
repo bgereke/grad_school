@@ -1,5 +1,5 @@
 # grad_school_archive
-An unorganized collection of scripts I used and/or developed during my PhD work at the Institute for Neuroscience at UT Austin (2013-18). 
+An unorganized collection of scripts I used and/or developed during my PhD work at the Institute for Neuroscience at UT Austin (2012-18). 
 
 Colgin Lab: https://clm.utexas.edu/lclab/
 
