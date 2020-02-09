@@ -1,6 +1,4 @@
 # R scripts
 
-Includes:	
-
-	*Batch scripts 
-	*sdf
+*Batch scripts 
+*sdf
