@@ -1,4 +1,4 @@
 # R scripts
 
-*Batch scripts 
-*sdf
+* Batch scripts 
+* sdf
