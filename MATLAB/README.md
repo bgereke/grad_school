@@ -1,6 +1,6 @@
 # Matlab scripts
 
-In addition to those I developed, this archive includes many external libraries I either used or studied during my PhD work.
+In addition to those I developed, this archive includes external libraries I either used or studied during my PhD work. An incomplete list of functions and topics:
 
 * Batch wrangling and preprocessing of neurophyiology data (e.g., across animals, days, etc.)
 * Various aproaches to time-frequency decomposition (i.e., wavelet transforms, empirical mode decomp, reassignment methods, matching pursuits, dictionary learning, etc.).
