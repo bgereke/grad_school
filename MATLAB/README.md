@@ -7,4 +7,4 @@ In addition to those I developed, this archive includes many external libraries 
 * Various time series clustering methods (i.e., for clustering neural spikes, learning shapes/patterns from local field potentials, etc.)
 * Decoding of rodent behavior from hippocampal place cell and field potential data
 * Various utilities for data smoothing, interpolation, density estimation, etc.
-* Frequency-resolved dimensionality reduction methods for high channel-count neurophysiology data with a focus on limiting common artifacts (e.g., volume conduction, muscle, chewing, artifacts, etc.) 
+* Frequency-resolved dimensionality reduction and functional "connectivity" methods for high channel-count neurophysiology data with a focus on limiting common artifacts (e.g., volume conduction, muscle, chewing, artifacts, etc.) 
